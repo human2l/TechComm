@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://kai:kai@techcomm.94zr9.mongodb.net/TechComm?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://kai:kai@techcomm.94zr9.mongodb.net/TechComm?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }

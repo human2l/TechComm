@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -19,7 +19,7 @@ const AddExperience = ({ addExperience, history }) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   return (
-    <Fragment>
+    <>
       <h1 className='large text-primary'>Add An Experience</h1>
       <p className='lead'>
         <i className='fas fa-code-branch'></i> Add any developer/programming
@@ -107,14 +107,11 @@ const AddExperience = ({ addExperience, history }) => {
           ></textarea>
         </div>
         <input type='submit' className='btn btn-primary my-1' />
-        <a
-          className='btn btn-light my-1'
-          onClick={() => history.push('/dashboard')}
-        >
+        <button className='btn btn-light my-1' onClick={() => history.goBack()}>
           Go Back
-        </a>
+        </button>
       </form>
-    </Fragment>
+    </>
   );
 };
 

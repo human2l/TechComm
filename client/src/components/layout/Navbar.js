@@ -1,11 +1,18 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  //Note: href='#!' is a hack to prevent <a> href function
   const authLinks = (
     <ul>
+      <li>
+        <Link to='/profiles'>
+          <i className='fas fa-user-friends'></i>{' '}
+          <span className='hide-sm'>Developers</span>
+        </Link>
+      </li>
       <li>
         <Link to='/dashboard'>
           <i className='fas fa-user'></i>{' '}
@@ -23,7 +30,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <a href='#!'>Developers</a>
+        <Link to='/profiles'>Developers</Link>
       </li>
       <li>
         <Link to='/register'>Register</Link>
@@ -40,9 +47,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <i className='far fa-comments'></i> TechComm
         </Link>
       </h1>
-      {!loading && (
-        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
+      {!loading && <>{isAuthenticated ? authLinks : guestLinks}</>}
     </nav>
   );
 };

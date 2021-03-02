@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
@@ -71,7 +71,7 @@ const EditProfile = ({
   };
 
   return (
-    <Fragment>
+    <>
       <h1 className='large text-primary'>Create Your Profile</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Let's get some information to make your
@@ -178,7 +178,7 @@ const EditProfile = ({
         </div>
 
         {displaySocialInputs && (
-          <Fragment>
+          <>
             <div className='form-group social-input'>
               <i className='fab fa-twitter fa-2x'></i>
               <input
@@ -233,15 +233,21 @@ const EditProfile = ({
                 onChange={(e) => onChange(e)}
               />
             </div>
-          </Fragment>
+          </>
         )}
 
         <input type='submit' className='btn btn-primary my-1' />
-        <Link className='btn btn-light my-1' to='/dashboard'>
+        <button
+          className='btn btn-light my-1'
+          onClick={(e) => {
+            e.preventDefault();
+            history.goBack();
+          }}
+        >
           Go Back
-        </Link>
+        </button>
       </form>
-    </Fragment>
+    </>
   );
 };
 

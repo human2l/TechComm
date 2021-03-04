@@ -9,8 +9,8 @@ const config = require('config');
 const { check, validationResult } = require('express-validator');
 
 // @route GET api/auth
-// @desc Test route
-// @access Public
+// @desc Get user by token
+// @access Private
 router.get('/', auth, async (req, res) => {
   try {
     // -password means dont put password into message
@@ -23,7 +23,7 @@ router.get('/', auth, async (req, res) => {
 });
 
 // @route POST api/users
-// @desc Register user
+// @desc Authenticate user & get token
 // @access Public
 router.post(
   '/',

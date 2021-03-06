@@ -42,7 +42,7 @@ const Profile = (state = initialState, action) => {
         ...state,
         profile: null,
         repos: [],
-        loading: false,
+        loading: true,
       };
     case GET_REPOS:
       return {

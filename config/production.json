@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://kai:kai@techcomm.94zr9.mongodb.net/TechComm?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "0fd81e152fbc8e1bad94",
+  "githubSecret": "af4206029a9a12e335fcd4b08732bceeff12c648"
+}

@@ -14,7 +14,6 @@ localStorage.token && setAuthToken(localStorage.token);
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
-    // Note: the empty brackets tells react to run this function only once
   }, []);
   return (
     <Provider store={store}>

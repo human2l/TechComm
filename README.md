@@ -34,7 +34,9 @@ provide "create profile" button
 #### Else:
 * show 3 options(button): "Edit Profile", "Add Experience" and "Add Education"
 * show user's Experience Credentials & Education Credentials
+
 If user click Edit Profile, show form:
+
 |Form Content
 |---
 |Professional Status
